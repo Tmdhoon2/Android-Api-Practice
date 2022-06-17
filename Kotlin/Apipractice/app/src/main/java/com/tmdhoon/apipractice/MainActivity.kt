@@ -8,6 +8,7 @@ import com.tmdhoon.apipractice.response.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,14 +26,17 @@ class MainActivity : AppCompatActivity() {
                 call: Call<UserResponse>,
                 response: Response<UserResponse>
             ) {
-                val userInfo = response.body()
+                if(response.isSuccessful) {
+                    val userInfo = response.body()
 
-                binding.tvFollowerCount.text = userInfo!!.followers.toString()
-                binding.tvFollowingCount.text = userInfo!!.following.toString()
-                binding.tvName.text = userInfo!!.login
-                binding.tvDescription.text = userInfo!!.bio
+                    binding.tvFollowerCount.text = userInfo!!.followers.toString()
+                    binding.tvFollowingCount.text = userInfo!!.following.toString()
+                    binding.tvName.text = userInfo!!.login
+                    binding.tvDescription.text = userInfo!!.bio
 
-                getImageURL(userInfo.avatar_url)
+                    getImageURL(userInfo.avatar_url)
+                }
+
             }
 
             fun getImageURL(imageURL: String){
