@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:hint="영화 제목을 입력하세요"
+        android:layout_marginLeft="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="title"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/etInput"
+        app:layout_constraintStart_toStartOf="@+id/etInput"
+        app:layout_constraintTop_toBottomOf="@id/etInput" />
+
+    <TextView
+        android:id="@+id/Year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="year"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/Title"
+        app:layout_constraintStart_toStartOf="@+id/Title"
+        app:layout_constraintTop_toBottomOf="@id/Title" />
+
+    <TextView
+        android:id="@+id/Runtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="runtime"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/Year"
+        app:layout_constraintStart_toStartOf="@+id/Year"
+        app:layout_constraintTop_toBottomOf="@id/Year" />
+
+    <TextView
+        android:id="@+id/Country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="country"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/Runtime"
+        app:layout_constraintStart_toStartOf="@+id/Runtime"
+        app:layout_constraintTop_toBottomOf="@id/Runtime" />
+
+    <Button
+        android:id="@+id/btSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="검색"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/etInput"
+        app:layout_constraintLeft_toRightOf="@id/etInput"
+        app:layout_constraintTop_toTopOf="@+id/etInput" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
