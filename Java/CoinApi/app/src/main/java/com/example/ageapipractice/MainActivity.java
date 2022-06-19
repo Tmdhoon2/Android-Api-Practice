@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<GetResponse> call, Response<GetResponse> response) {
                         if(response.isSuccessful()){
+                            binding.Id.setText(response.body().getId());
                             binding.Name.setText(response.body().getName());
                             binding.Symbol.setText(response.body().getSymbol());
                             binding.Rank.setText(response.body().getRank());
