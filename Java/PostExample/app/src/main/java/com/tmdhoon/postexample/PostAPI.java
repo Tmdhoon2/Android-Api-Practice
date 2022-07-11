@@ -10,7 +10,6 @@ interface PostAPI {
     @GET("post/{post-id}")
     Call<PostResponse> getPost(
             @Path("post-id") Editable postId
+
     );
-
-
 }
